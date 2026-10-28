@@ -1,0 +1,61 @@
+{
+  "name": "@obscurify/openclaw-provider",
+  "version": "0.1.0",
+  "description": "Obscurify.ai model provider for OpenClaw: a private, OpenAI-compatible API to 200+ models",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Obscurify.ai",
+    "email": "contact@obscurify.ai",
+    "url": "https://obscurify.ai"
+  },
+  "homepage": "https://github.com/Obscurify-ai/openclaw-obscurify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Obscurify-ai/openclaw-obscurify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Obscurify-ai/openclaw-obscurify/issues"
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "obscurify",
+    "llm",
+    "ai",
+    "openai-compatible",
+    "privacy"
+  ],
+  "files": [
+    "index.js",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.10.8"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "install": {
+      "clawhubSpec": "clawhub:@obscurify/openclaw-provider",
+      "npmSpec": "@obscurify/openclaw-provider",
+      "defaultChoice": "npm",
+      "minHostVersion": ">=2026.10.8"
+    },
+    "compat": {
+      "pluginApi": ">=2026.10.8",
+      "minGatewayVersion": "2026.10.8"
+    },
+    "build": {
+      "openclawVersion": "2026.10.8",
+      "pluginSdkVersion": "2026.10.8"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

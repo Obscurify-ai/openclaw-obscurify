@@ -1,0 +1,161 @@
+{
+  "id": "obscurify",
+  "name": "Obscurify.ai",
+  "description": "Obscurify.ai model provider: a private, OpenAI-compatible API to 200+ models.",
+  "categories": [
+    "models"
+  ],
+  "activation": {
+    "onStartup": false
+  },
+  "enabledByDefault": true,
+  "providers": [
+    "obscurify",
+    "obscurify-ai"
+  ],
+  "providerAuthAliases": {
+    "obscurify-ai": "obscurify"
+  },
+  "providerEndpoints": [
+    {
+      "endpointClass": "obscurify-native",
+      "hosts": [
+        "obscurify.ai"
+      ]
+    }
+  ],
+  "setup": {
+    "providers": [
+      {
+        "id": "obscurify",
+        "authMethods": [
+          "api-key"
+        ],
+        "envVars": [
+          "OBSCURIFY_API_KEY"
+        ]
+      }
+    ]
+  },
+  "providerAuthChoices": [
+    {
+      "provider": "obscurify",
+      "method": "api-key",
+      "choiceId": "obscurify-api-key",
+      "appGuidedSecret": true,
+      "choiceLabel": "Obscurify.ai API key",
+      "choiceHint": "Private, OpenAI-compatible API to 200+ models",
+      "groupId": "obscurify",
+      "groupLabel": "Obscurify.ai",
+      "groupHint": "Privacy-focused, no-email accounts",
+      "optionKey": "obscurifyApiKey",
+      "cliFlag": "--obscurify-api-key",
+      "cliOption": "--obscurify-api-key <key>",
+      "cliDescription": "Obscurify.ai API key (sk-obs1_...)"
+    }
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "modelCatalog": {
+    "aliases": {
+      "obscurify-ai": {
+        "provider": "obscurify"
+      }
+    },
+    "providers": {
+      "obscurify": {
+        "baseUrl": "https://obscurify.ai/v1",
+        "api": "openai-completions",
+        "defaultModel": "deepseek/deepseek-v4-flash",
+        "models": [
+          {
+            "id": "deepseek/deepseek-v4-flash",
+            "name": "DeepSeek V4 Flash",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 1048576,
+            "maxTokens": 32768,
+            "cost": {
+              "input": 0.1183,
+              "output": 0.2366,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          },
+          {
+            "id": "z-ai/glm-5.3",
+            "name": "GLM 5.3",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 1048576,
+            "maxTokens": 131072,
+            "cost": {
+              "input": 0.663,
+              "output": 1.2155,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          },
+          {
+            "id": "moonshotai/kimi-k2-0905",
+            "name": "Kimi K2 0905",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 262144,
+            "maxTokens": 16384,
+            "cost": {
+              "input": 0.78,
+              "output": 3.25,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          },
+          {
+            "id": "qwen/qwen3-coder",
+            "name": "Qwen3 Coder 480B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 262000,
+            "maxTokens": 65536,
+            "cost": {
+              "input": 0.1436,
+              "output": 0.5525,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          },
+          {
+            "id": "meta-llama/llama-3.3-70b-instruct",
+            "name": "Llama 3.3 70B Instruct",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "cost": {
+              "input": 0.0553,
+              "output": 0.2541,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            }
+          }
+        ]
+      }
+    },
+    "discovery": {
+      "obscurify": "refreshable"
+    }
+  }
+}
