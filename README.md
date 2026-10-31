@@ -7,10 +7,10 @@ Obscurify.ai is a privacy-focused, OpenAI-compatible API to 200+ models (GPT, Cl
 ## Install
 
 ```sh
-openclaw plugins install @obscurify/openclaw-provider
+openclaw plugins install clawhub:@obscurify/openclaw-provider
 ```
 
-That installs from [ClawHub](https://clawhub.ai). The same package is on npm: `openclaw plugins install npm:@obscurify/openclaw-provider --force` (OpenClaw asks for `--force` on npm sources because they're outside ClawHub's review).
+That installs from [ClawHub](https://clawhub.ai). Without the `clawhub:` prefix, recent OpenClaw looks on npm and asks for `--force`, because npm sources are outside ClawHub's review. The same package is on npm: `openclaw plugins install npm:@obscurify/openclaw-provider --force`.
 
 Needs OpenClaw 2026.10.8 or newer.
 
